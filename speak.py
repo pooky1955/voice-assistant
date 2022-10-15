@@ -17,7 +17,7 @@ def speak(text):
     now = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     filename = f"output-{now}.wav" 
     run_command(f'pico2wave -w {filename} "{text}"')
-    run_command(f"mpv {filename} --speed 1.1")
+    run_command(f"play -qV0 {filename} tempo 1.1 treble 24 gain -l 6")
     os.remove(filename)
 
 
